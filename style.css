@@ -1,18 +1,61 @@
 .storeItems div img{
     width: 250px;
     height: 250px;
+    transition: width 10s;
 }
 
 .storeItems div{
-    display: inline-block;
-    justify-content: center;
-    flex-wrap: wrap;
     margin: 15px;
     height: 300px;
     background-color: red;
     text-align: center;
     border-radius: 10px;
+}
 
+.storeItems{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+
+@keyframes colorswitch {
+    from {background-color: red;}
+    to {background-color: blue;}
+}
+
+@keyframes multipleColors {
+    20% {background-color: orange;}
+    40% {background-color: yellow;}
+    60% {background-color: green;}
+    80% {background-color: blue;}
+    100% {background-color: purple;}
+    
+}
+
+@keyframes multipleTextColors {
+    20% {color: orange;}
+    40% {color: yellow;}
+    60% {color: green;}
+    80% {color: blue;}
+    100% {color: purple;}
+    
+}
+
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+}
+
+@keyframes bigThenSmall {
+    from {width: 250px; height: 250px;}
+    to {width: 2500; height: 2500px;}
 }
 
 .price{
@@ -21,4 +64,29 @@
 
 h1{
     text-align: center;
+    flex: 1;
+    animation-name: multipleTextColors;
+}
+
+#titleStuff{
+    display: flex;
+}
+
+#signUpText{
+    width: 100px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
+.storeItems div:hover{
+    animation-name: multipleColors;
+    animation-duration:  750ms;
+    animation-iteration-count: infinite;
+}
+
+.storeItems img:hover{
+    animation-name: rotation;
+    animation-duration: 1ms;
+    animation-iteration-count: infinite;
 }
